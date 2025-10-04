@@ -1,0 +1,27 @@
+{
+  "name": "raincheck-electron",
+  "version": "0.1.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --x64"
+  },
+  "devDependencies": {
+    "electron": "^26.0.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "appId": "com.raincheck.app",
+    "files": [
+      "main.js",
+      "../frontend/dist/**",
+      "../backend/dist/backend.exe"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "artifactName": "RainCheck-Setup-${version}.exe"
+    }
+  }
+}
